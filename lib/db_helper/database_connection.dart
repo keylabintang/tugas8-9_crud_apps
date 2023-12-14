@@ -19,7 +19,6 @@ class DatabaseConnection {
 
   Future<void> _onUpgrade(
       Database database, int oldVersion, int newVersion) async {
-    // If you need to add a new column, you can do it here
     if (oldVersion == 1 && newVersion == 2) {
       String addColumnSql = "ALTER TABLE users ADD COLUMN address TEXT;";
       await database.execute(addColumnSql);
